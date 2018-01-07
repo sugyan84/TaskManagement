@@ -8,11 +8,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.kashsplit.classes.models.RegistrationForm;
 
 @Controller
-@RequestMapping("register")
-public class RegistrationController
+@RequestMapping("user")
+public class UserController
 {
 
-	@RequestMapping("/")
+	@RequestMapping("/register")
 	public String showRegistrationForm(Model m)
 	{
 		m.addAttribute("registrationForm", new RegistrationForm());
