@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.kashsplit.classes.models.RegistrationForm;
 
 @Controller
-@RequestMapping("user")
+@RequestMapping("/user")
 public class UserController
 {
 
@@ -26,6 +26,6 @@ public class UserController
 	{
 		m.addAttribute("newUserData", "New user for "+newUser.getFirstName()+" will be created soon with username "+newUser.getUsername());
 		
-		return "redirect:/";
+		return "register-confirmation";
 	}
 }

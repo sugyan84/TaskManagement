@@ -5,54 +5,88 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>Registration</title>
+
+<style type="text/css">
+table {
+	border: 1px solid black;
+}
+
+td {
+	padding: 12px;
+	align-content: center;
+}
+
+tr:nth-child(even) {
+	background-color: #d9ffb3;
+}
+
+tr:nth-child(odd) {
+	background-color: #fff2e6;
+}
+
+.headingString {
+	color: #0066ff;
+	font-family: "Bookman", monospace;
+}
+
+.tableFormHead {
+	align-content: center;
+}
+
+body {
+	background-color: teal;
+}
+
+.textSizeTableHeader {
+	font-size: 50px;
+}
+
+.textSizeTableFormHead{
+
+}
+
+</style>
 </head>
 <body>
 
 	<form:form action="addUser" modelAttribute="registrationForm">
 
 		<table border="1" align="center" bordercolor="green">
+
+			<th bgcolor="#ff6666" colspan="2" height="80px" class="textSizeTableHeader"><b
+				class="headingString">Register</b></th>
 			<tr>
-			<td align="center"><br>
-				Username:
-				<form:input path="username" /><br><br>
-				</td>
-			</tr>
-			
-			<tr>
-			<td align="center"><br>
-				First Name:
-				<form:input path="firstName" /><br><br>
-				</td>
-			</tr>
-			
-			
-			<tr>
-			<td align="center"><br>
-				Last Name:
-				<form:input path="lastName" /><br><br>
-				</td>
-			</tr>
-			
-			<tr>
-			<td align="center"><br>
-				Create Password:
-				<form:input path="password" /><br><br>
-				</td>
-			</tr>
-			
-			
-			<tr>
-			<td align="center"><br>
-			Re-enter Password:
-			<form:input path="password" /><br><br>
-			</td>
+				<td>Username:</td>
+				<td><br> <form:input path="username" /><br> <br></td>
 			</tr>
 
 			<tr>
-			<td align="center"><br>
-			<input type="submit" value="Register" /><br><br>
-			</td>
+				<td>First Name:</td>
+				<td><br> <form:input path="firstName" /><br> <br></td>
+			</tr>
+
+
+			<tr>
+				<td>Last Name:</td>
+				<td><br> <form:input path="lastName" /><br> <br></td>
+			</tr>
+
+			<tr>
+				<td>Create Password:</td>
+				<td><br> <form:input path="password" /><br> <br></td>
+			</tr>
+
+
+			<tr>
+				<td>Re-enter Password:</td>
+				<td><br> <form:input path="password" /><br> <br></td>
+			</tr>
+
+			<tr>
+				<td align="center" colspan="2"><br> <input type="submit"
+					value="Register" /><br> <br></td>
 			</tr>
 		</table>
 
