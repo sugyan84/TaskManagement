@@ -26,6 +26,6 @@ public class UserController
 	{
 		m.addAttribute("newUserData", "New user for "+newUser.getFirstName()+" will be created soon with username "+newUser.getUsername());
 		
-		return "register-confirmation";
+		return "redirect:/";
 	}
 }
