@@ -10,9 +10,7 @@
 </head>
 <body>
 
-	Welcome <h3>${username}</h3>
-	
-	<a href="nextPage">Next Page</a>
+	Next Page <h3>${username}</h3>
 
 </body>
 </html>
