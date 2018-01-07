@@ -1,4 +1,4 @@
-package com.kashsplit.models;
+package com.kashsplit.classes.models;
 
 public class LoginForm
 {
