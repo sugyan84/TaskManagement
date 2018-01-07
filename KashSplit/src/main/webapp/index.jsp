@@ -4,5 +4,7 @@
 
 <a href="login/showForm">Login</a>
 
+<a href="register/">New User ?</a>
+
 </body>
 </html>
