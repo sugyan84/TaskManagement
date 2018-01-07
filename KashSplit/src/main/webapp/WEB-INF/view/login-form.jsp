@@ -5,31 +5,70 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
 <title>Login</title>
+
+<style type="text/css">
+table {
+	border: 1px solid black;
+}
+
+td {
+	padding: 12px;
+	align-content: center;
+}
+
+tr:nth-child(even) {
+	background-color: #d9ffb3;
+}
+
+tr:nth-child(odd) {
+	background-color: #fff2e6;
+}
+
+.headingString {
+	color: #0066ff;
+	font-family: "Bookman", monospace;
+}
+
+.tableFormHead {
+	align-content: center;
+}
+
+body {
+	background-color: teal;
+}
+
+.textSizeTableHeader {
+	font-size: 50px;
+}
+
+.textSizeTableFormHead {
+	
+}
+</style>
 </head>
 <body>
 
 	<form:form action="processForm" modelAttribute="loginForm">
 
 		<table border="1" align="center" bordercolor="green">
+
+			<th bgcolor="#ff6666" colspan="2" height="80px"
+				class="textSizeTableHeader"><b class="headingString">Login</b></th>
 			<tr>
-			<td align="center"><br>
-				Username:
-				<form:input path="userName" /><br><br>
-				</td>
-			</tr>
-			
-			<tr>
-			<td align="center"><br>
-			Password:
-			<form:input path="password" /><br><br>
-			</td>
+				<td>Username:</td>
+				<td><form:input path="userName" /><br><br></td>
 			</tr>
 
 			<tr>
-			<td align="center"><br>
-			<input type="submit" value="Login" /><br><br>
-			</td>
+				<td>Password:</td>
+				<td><br> <form:input path="password" /><br> <br></td>
+			</tr>
+
+			<tr>
+				<td align="center" colspan="2"><br> <input type="submit"
+					value="Login" /><br> <br></td>
 			</tr>
 		</table>
 
