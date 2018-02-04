@@ -58,7 +58,7 @@ body {
 				class="textSizeTableHeader"><b class="headingString">Login</b></th>
 			<tr>
 				<td>Username:</td>
-				<td><form:input path="userName" /><br><br></td>
+				<td><form:input path="loginId" /><br><br></td>
 			</tr>
 
 			<tr>
