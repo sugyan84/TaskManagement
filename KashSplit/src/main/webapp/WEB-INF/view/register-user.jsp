@@ -59,7 +59,7 @@ body {
 				class="headingString">Register</b></th>
 			<tr>
 				<td>Username:</td>
-				<td><br> <form:input path="username" /><br> <br></td>
+				<td><br> <form:input path="loginId" /><br> <br></td>
 			</tr>
 
 			<tr>
@@ -77,12 +77,12 @@ body {
 				<td>Create Password:</td>
 				<td><br> <form:input path="password" /><br> <br></td>
 			</tr>
-
+<%-- 
 
 			<tr>
 				<td>Re-enter Password:</td>
 				<td><br> <form:input path="password" /><br> <br></td>
-			</tr>
+			</tr> --%>
 
 			<tr>
 				<td align="center" colspan="2"><br> <input type="submit"
