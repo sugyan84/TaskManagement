@@ -3,7 +3,6 @@ package com.kashsplit.classes.services;
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-import com.kashsplit.classes.models.LoginForm;
 import com.kashsplit.classes.models.User;
 import com.kashsplit.interfaces.LoginService;
 
