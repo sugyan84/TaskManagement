@@ -1,8 +1,8 @@
-package com.kashsplit.interfaces;
+package com.taskmanagement.interfaces;
 
 import java.util.List;
 
-import com.kashsplit.classes.models.User;
+import com.taskmanagement.classes.models.User;
 
 public interface UserDAO
 {

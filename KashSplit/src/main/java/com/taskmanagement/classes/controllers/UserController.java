@@ -1,4 +1,4 @@
-package com.kashsplit.classes.controllers;
+package com.taskmanagement.classes.controllers;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +7,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.kashsplit.classes.models.User;
-import com.kashsplit.interfaces.UserService;
+import com.taskmanagement.classes.models.User;
+import com.taskmanagement.interfaces.UserService;
 
 @Controller
 @RequestMapping("/user")
@@ -21,6 +21,7 @@ public class UserController
 	
 	
 	
+	//Show Registration Form
 	@RequestMapping("/register")
 	public String showRegistrationForm(Model m)
 	{
@@ -33,7 +34,7 @@ public class UserController
 	
 	
 	
-	
+	//Registration Form Submitted
 	@RequestMapping("/addUser")
 	public String createNewUser(@ModelAttribute("registrationForm") User newUser, Model m)
 	{
@@ -43,6 +44,6 @@ public class UserController
 		
 		m.addAttribute("newUserData", "New user for |"+newUser.getFirstName()+"| created with loginId |"+newUser.getLoginId()+"| and rowId |"+createdId+"|");
 		
-		return "register-confirmation";
+		return "__register-confirmation";
 	}
 }

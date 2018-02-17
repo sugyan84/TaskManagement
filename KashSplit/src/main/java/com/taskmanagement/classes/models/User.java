@@ -1,4 +1,4 @@
-package com.kashsplit.classes.models;
+package com.taskmanagement.classes.models;
 
 import java.time.LocalDateTime;
 

@@ -1,10 +1,11 @@
-package com.kashsplit.classes;
+package com.taskmanagement.classes;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.springframework.stereotype.Component;
 
-import com.kashsplit.classes.models.User;
+import com.taskmanagement.classes.models.Task;
+import com.taskmanagement.classes.models.User;
 
 @Component
 public class SessionFactorySingleton
@@ -15,6 +16,7 @@ public class SessionFactorySingleton
 	{
 		sessionFac = new Configuration().configure("hibernate.cfg.xml")
 										.addAnnotatedClass(User.class)
+										.addAnnotatedClass(Task.class)
 										.buildSessionFactory();		
 		System.out.println("Session Factory is Initialized");
 	}

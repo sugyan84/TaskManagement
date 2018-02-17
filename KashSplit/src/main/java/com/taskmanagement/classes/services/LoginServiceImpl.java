@@ -1,10 +1,10 @@
-package com.kashsplit.classes.services;
+package com.taskmanagement.classes.services;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Service;
 
-import com.kashsplit.classes.models.User;
-import com.kashsplit.interfaces.LoginService;
+import com.taskmanagement.classes.models.User;
+import com.taskmanagement.interfaces.LoginService;
 
 @Service
 public class LoginServiceImpl implements LoginService

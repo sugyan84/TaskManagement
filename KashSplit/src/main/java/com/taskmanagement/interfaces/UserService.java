@@ -1,6 +1,6 @@
-package com.kashsplit.interfaces;
+package com.taskmanagement.interfaces;
 
-import com.kashsplit.classes.models.User;
+import com.taskmanagement.classes.models.User;
 
 public interface UserService
 {

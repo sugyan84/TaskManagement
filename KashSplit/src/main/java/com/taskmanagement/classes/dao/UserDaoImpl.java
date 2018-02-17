@@ -1,4 +1,4 @@
-package com.kashsplit.classes.dao;
+package com.taskmanagement.classes.dao;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.springframework.stereotype.Repository;
 
-import com.kashsplit.classes.SessionFactorySingleton;
-import com.kashsplit.classes.models.User;
-import com.kashsplit.interfaces.UserDAO;
+import com.taskmanagement.classes.SessionFactorySingleton;
+import com.taskmanagement.classes.models.User;
+import com.taskmanagement.interfaces.UserDAO;
 
 @Repository
 public class UserDaoImpl implements UserDAO

@@ -1,4 +1,4 @@
-package com.kashsplit.classes.controllers;
+package com.taskmanagement.classes.controllers;
 
 import javax.servlet.http.HttpSession;
 
@@ -9,8 +9,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.kashsplit.classes.models.User;
-import com.kashsplit.interfaces.UserService;
+import com.taskmanagement.classes.models.User;
+import com.taskmanagement.interfaces.UserService;
 
 @Controller
 @RequestMapping("/login")

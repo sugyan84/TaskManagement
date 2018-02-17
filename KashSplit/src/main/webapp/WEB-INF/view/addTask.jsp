@@ -1,9 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
  <!DOCTYPE html>
 <!-- Template by html.am -->
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 		<title>Task Management</title>
 		<style type="text/css">
 			html, #page { padding:0; margin:0;}
@@ -79,6 +82,7 @@
 			function generateContentText(){
 				document.write(contentText+" ")
 			}
+
 		</script>
 	</head>
 	<body>
@@ -86,13 +90,12 @@
 			<header id="header">
 				<div id="header-inner">
 					<div id="logo">
-						<h1><a href="file:///C:/Users/PIKS-PC/Desktop/SampleHTMLPages/HomePage.html">Task<span>Management</span></a></h1>
+						<h1><a href="/">Task<span>Management</span></a></h1>
 					</div>
 					<div id="top-nav">
 						<ul>
 						<li><a href="#">About</a></li>
-						<li><a href="login/showForm">Login  <i class="fa fa-user-circle"></i></a></li>
-						<li><a href="user/register">Register  <i class="fa fa-id-card-o"></i></a></li>
+						<li><a href="#">Settings</a></li>
 						<li><a href="#">FAQ</a></li>
 						<li><a href="#">Help</a></li>
 						</ul>
@@ -102,7 +105,7 @@
 			</header>
 			<div class="feature">
 				<div class="feature-inner">
-				<h1>your Task manager</h1>
+				<h1>Create a task</h1>
 				</div>
 			</div>
 
@@ -113,17 +116,29 @@
 					<main id="contentbar">
 						<div class="article">
 							<!-- <p><script>generateText(12)</script></p> -->
-								<!--<table class="myTable">
+							<form:form action="../../task/new" modelAttribute="taskForm">
+								<table class="myTable">
 									<tr>
-										<th>Table Header</th><th>Table Header</th>
+										<th colspan="2">Create Task</th>
 									</tr>
 									<tr>
-										<td>Table cell 1</td><td>Table cell 2</td>
+										<td>Task Name:</td>
+										<td><form:input path="taskName" /><br><br></td>
 									</tr>
 									<tr>
-										<td>Table cell 3</td><td>Table cell 4</td>
+										<td>Description:</td>
+										<td><br> <form:input path="taskDescription" /><br> <br></td>
 									</tr>
-								</table> -->
+									<tr>
+										<td>Label:</td>
+										<td><br> <form:input path="label" /><br> <br></td>
+									</tr>
+									<tr>
+										<td align="center" colspan="2"><br> <input type="submit"
+											value="Create" /><br> <br></td>
+									</tr>
+								</table>
+							</form:form>
 						</div>
 					</main>
 
@@ -131,13 +146,12 @@
 						<div class="widget">
 							<h3>Tasks</h3>
 							<ul>
-							<li><a href="#">---</a></li>
-							<li><a href="#">---</a></li>
-							<li><a href="#">---</a></li>
-							<li><a href="#">---</a></li>
-							<li><a href="#">---</a></li>
-							<li><a href="#">---</a></li>
-							</ul>
+							<li><a href="../task/show/new">Add a Task</a></li>
+							<li><a href="../task/update">Update Tasks</a></li>
+							<li><a href="../task/delete">Delete Tasks</a></li>
+							<li><a href="../task/pending">View Pending Tasks</a></li>
+							<li><a href="../task/completed">View Completed Tasks</a></li>
+							<li><a href="../task/download">Download Tasks</a></li>
 						</div>
 					</nav>
 

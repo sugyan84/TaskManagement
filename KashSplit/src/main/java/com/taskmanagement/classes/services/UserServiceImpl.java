@@ -1,12 +1,12 @@
-package com.kashsplit.classes.services;
+package com.taskmanagement.classes.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.kashsplit.classes.models.User;
-import com.kashsplit.classes.utility.SystemUtil;
-import com.kashsplit.interfaces.UserDAO;
-import com.kashsplit.interfaces.UserService;
+import com.taskmanagement.classes.models.User;
+import com.taskmanagement.classes.utility.SystemUtil;
+import com.taskmanagement.interfaces.UserDAO;
+import com.taskmanagement.interfaces.UserService;
 
 @Service
 public class UserServiceImpl implements UserService
