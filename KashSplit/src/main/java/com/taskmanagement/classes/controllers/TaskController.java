@@ -14,7 +14,7 @@ import com.taskmanagement.interfaces.TaskService;
 @RequestMapping("/task")
 public class TaskController
 {
-	private static final Logger logger = Logger.getLogger(UserController.class);
+	private static final Logger logger = Logger.getLogger(TaskController.class);
 
 	@Autowired
 	public TaskService taskService;
