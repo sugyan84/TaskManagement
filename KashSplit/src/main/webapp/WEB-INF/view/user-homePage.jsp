@@ -7,7 +7,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <title>Task Management</title>
 <style type="text/css">
 html, #page {
@@ -273,14 +274,13 @@ h1, h2, h3, h4, h5, h6 {
 			<div id="header-inner">
 				<div id="logo">
 					<h1>
-						<a
-							href="/">Task<span>Management</span></a>
+						<a href="/">Task<span>Management</span></a>
 					</h1>
 				</div>
 				<div id="top-nav">
 					<ul>
 						<li><a href="#">About</a></li>
-						<li><a href="#">Settings  <i class="fa fa-cogs"></i></a></li>
+						<li><a href="#">Settings <i class="fa fa-cogs"></i></a></li>
 						<li><a href="#">FAQ</a></li>
 						<li><a href="#">Help</a></li>
 					</ul>
@@ -301,34 +301,61 @@ h1, h2, h3, h4, h5, h6 {
 				<main id="contentbar">
 				<div class="article">
 					<!-- <p><script>generateText(12)</script></p> -->
-					<!--<table class="myTable">
-									<tr>
-										<th>Table Header</th><th>Table Header</th>
-									</tr>
-									<tr>
-										<td>Table cell 1</td><td>Table cell 2</td>
-									</tr>
-									<tr>
-										<td>Table cell 3</td><td>Table cell 4</td>
-									</tr>
-								</table> -->
-					Welcome
-					<h3>${username}</h3>
+					<table class="myTable">
+						<tr>
+							<th>Task Name</th>
+							<th>Details</th>
+							<th>Label</th>
+							<th>Due Date</th>
+							<th>Status</th>
+							<th>Operations</th>
+						</tr>
 
-					<a href="nextPage">Next Page</a>
+						<c:forEach var="temp" items="${tasksList}">
+
+							<!--embedd the customer ids in the hyperLink  -->
+							<c:url var="updateLink" value="/task/showFormForUpdate">
+								<c:param name="customerId" value="${temp.taskId}"></c:param>
+							</c:url>
+
+							<c:url var="deleteLink" value="/task/showFormForDelete">
+								<c:param name="customerId" value="${temp.taskId}"></c:param>
+							</c:url>
+
+							<tr>
+								<td>${temp.taskName}</td>
+								<td>${temp.taskDescription}</td>
+								<td>${temp.label}</td>
+								<td>${temp.dueDate}</td>
+								<td>${temp.isCompleted}</td>
+
+								<td><a href="${updateLink}">Modify</a>| <a
+									href="${deleteLink}">Delete</a></td>
+							</tr>
+
+						</c:forEach>
+					</table>
 				</div>
 				</main>
 
 				<nav id="sidebar">
 					<div class="widget">
-						<h3><i class="fa fa-list-alt"></i>  Tasks</h3>
+						<h3>
+							<i class="fa fa-list-alt"></i> Tasks
+						</h3>
 						<ul>
-							<li><a href="../task/show/new"><i class="fa fa-plus-square-o"></i>  Add a Task</a></li>
-							<li><a href="../task/update"><i class="mega-octicon octicon-diff-modified"></i>  Update Tasks</a></li>
-							<li><a href="../task/delete"><i class="fi-trash"></i>  Delete Tasks</a></li>
-							<li><a href="../task/pending"><i class="mega-octicon octicon-checklist"></i>  View Pending Tasks</a></li>
-							<li><a href="../task/completed"><i class="glyphicon glyphicon-ok"></i>  View Completed Tasks</a></li>
-							<li><a href="../task/download"><i class="fi-download"></i>  Download Tasks</a></li>
+							<li><a href="../task/show/new"><i
+									class="fa fa-plus-square-o"></i> Add a Task</a></li>
+							<li><a href="../task/update"><i
+									class="mega-octicon octicon-diff-modified"></i> Update Tasks</a></li>
+							<li><a href="../task/delete"><i class="fi-trash"></i>
+									Delete Tasks</a></li>
+							<li><a href="../task/pending"><i
+									class="mega-octicon octicon-checklist"></i> View Pending Tasks</a></li>
+							<li><a href="../task/completed"><i
+									class="glyphicon glyphicon-ok"></i> View Completed Tasks</a></li>
+							<li><a href="../task/download"><i class="fi-download"></i>
+									Download Tasks</a></li>
 						</ul>
 					</div>
 				</nav>

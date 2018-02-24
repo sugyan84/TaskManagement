@@ -40,6 +40,14 @@ public class TaskController
 		return "__register-confirmation";
 	}
 	
+	
+	//showFormForUpdate
+	@RequestMapping("/showFormForUpdate")
+	public String showFormForUpdate(Model m)
+	{		
+		return "register-user";
+	}
+	
 	//update Task
 	@RequestMapping("/update")
 	public String updateTask(Model m)

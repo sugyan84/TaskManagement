@@ -54,8 +54,8 @@ public class TaskServiceImpl implements TaskService
 	@Override
 	public List<Task> getAllTasks()
 	{
-		// TODO Auto-generated method stub
-		return null;
+		
+		return taskDao.getAllTasks();
 	}
 
 	@Override

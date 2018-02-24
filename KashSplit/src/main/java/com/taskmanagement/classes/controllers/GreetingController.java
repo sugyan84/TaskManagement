@@ -1,5 +1,7 @@
 package com.taskmanagement.classes.controllers;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
@@ -9,7 +11,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.taskmanagement.classes.models.Task;
 import com.taskmanagement.classes.models.User;
+import com.taskmanagement.interfaces.TaskService;
 import com.taskmanagement.interfaces.UserService;
 
 @Controller
@@ -20,6 +24,9 @@ public class GreetingController
 	
 	@Autowired
 	private UserService userService;
+	
+	@Autowired
+	public TaskService taskService;
 
 	
 	
@@ -51,6 +58,11 @@ public class GreetingController
 			m.addAttribute("username", form.getLoginId());
 			// Create Session also
 			session.setAttribute("username", form.getLoginId());
+			
+			List<Task> allTasksList = taskService.getAllTasks();
+			
+			m.addAttribute("tasksList", allTasksList);
+			
 			returnPage = "user-homePage";
 		}
 		else
