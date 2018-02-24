@@ -16,7 +16,7 @@ import com.taskmanagement.interfaces.TaskDAO;
 @Repository
 public class TaskDaoImpl implements TaskDAO
 {
-	private static final Logger	logger	= Logger.getLogger(UserDaoImpl.class);
+	private static final Logger	logger	= Logger.getLogger(TaskDaoImpl.class);
 
 	SessionFactory	sessionFactory;
 
@@ -53,22 +53,91 @@ public class TaskDaoImpl implements TaskDAO
 	@Override
 	public boolean updateTask(Task updatedtTask)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		boolean retVal = false;
+		
+		try
+		{
+			this.sessionFactory = SessionFactorySingleton.getSessionFactory();
+			
+			Session s = sessionFactory.openSession();
+			
+			Transaction tx = s.beginTransaction();		
+				
+			s.saveOrUpdate(updatedtTask);
+			
+			tx.commit();
+			
+			retVal = true;
+		}catch(Exception ex)
+		{
+			retVal = false;
+			
+			logger.error("Error while trying to save Task object: ");
+			ex.printStackTrace();
+		}
+		
+		
+		return retVal;
 	}
 
 	@Override
 	public boolean deleteTask(Task taskToBeDeleted)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		boolean retVal = false;
+		
+		try
+		{
+			this.sessionFactory = SessionFactorySingleton.getSessionFactory();
+			
+			Session s = sessionFactory.openSession();
+			
+			Transaction tx = s.beginTransaction();		
+				
+			s.delete(taskToBeDeleted);
+			
+			tx.commit();
+			
+			retVal = true;
+		}catch(Exception ex)
+		{
+			retVal = false;
+			
+			logger.error("Error while trying to save Task object: ");
+			ex.printStackTrace();
+		}
+		
+		
+		return retVal;
 	}
 
 	@Override
 	public Task getTask(int taskId)
 	{
-		// TODO Auto-generated method stub
-		return null;
+		Task retVal = null;
+		
+		try
+		{
+			this.sessionFactory = SessionFactorySingleton.getSessionFactory();
+			
+			Session s = sessionFactory.openSession();
+			
+			Transaction tx = s.beginTransaction();		
+				
+			retVal = (Task) s.get(Task.class, taskId);
+			
+			tx.commit();
+			
+			
+		}catch(Exception ex)
+		{
+			retVal = null;
+			
+			logger.error("Error while trying to save Task object: ");
+			ex.printStackTrace();
+		}
+		
+		
+		return retVal;
 	}
 
 	@Override

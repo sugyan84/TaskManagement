@@ -33,22 +33,21 @@ public class TaskServiceImpl implements TaskService
 	@Override
 	public boolean updateTask(Task updatedtTask)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		boolean retVal = taskDao.updateTask(updatedtTask);
+		return retVal;
 	}
 
 	@Override
 	public boolean deleteTask(Task taskToBeDeleted)
 	{
-		// TODO Auto-generated method stub
-		return false;
+		boolean retVal = taskDao.deleteTask(taskToBeDeleted);
+		return retVal;
 	}
 
 	@Override
 	public Task getTask(int taskId)
-	{
-		// TODO Auto-generated method stub
-		return null;
+	{		
+		return taskDao.getTask(taskId);
 	}
 
 	@Override

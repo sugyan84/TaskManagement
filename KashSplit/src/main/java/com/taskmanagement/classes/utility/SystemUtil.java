@@ -5,7 +5,7 @@ import java.time.format.DateTimeFormatter;
 
 public class SystemUtil
 {
-	private static final DateTimeFormatter SYS_DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm");
+	private static final DateTimeFormatter SYS_DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
 
 	public static DateTimeFormatter getSysDateTimeFormat()
 	{
